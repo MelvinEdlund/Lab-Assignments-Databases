@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\medlu\\source\\repos\\Lab-Assignments-Databases\\Labb 2_Relationsdatabasapp\\Bokhandlarn\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7CF6EAFA-01D7-42A0-BFC5-1B5D12A3F663}|Bokhandlarn\\Bokhandlarn.csproj|c:\\users\\medlu\\source\\repos\\lab-assignments-databases\\labb 2_relationsdatabasapp\\bokhandlarn\\bokhandlarn\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{7CF6EAFA-01D7-42A0-BFC5-1B5D12A3F663}|Bokhandlarn\\Bokhandlarn.csproj|solutionrelative:bokhandlarn\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CF6EAFA-01D7-42A0-BFC5-1B5D12A3F663}|Bokhandlarn\\Bokhandlarn.csproj|c:\\users\\medlu\\source\\repos\\lab-assignments-databases\\labb 2_relationsdatabasapp\\bokhandlarn\\bokhandlarn\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CF6EAFA-01D7-42A0-BFC5-1B5D12A3F663}|Bokhandlarn\\Bokhandlarn.csproj|solutionrelative:bokhandlarn\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\medlu\\source\\repos\\Lab-Assignments-Databases\\Labb 2_Relationsdatabasapp\\Bokhandlarn\\Bokhandlarn\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Bokhandlarn\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\medlu\\source\\repos\\Lab-Assignments-Databases\\Labb 2_Relationsdatabasapp\\Bokhandlarn\\Bokhandlarn\\MainWindow.xaml",
+              "RelativeToolTip": "Bokhandlarn\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-12-08T08:18:04.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\medlu\\source\\repos\\Lab-Assignments-Databases\\Labb 2_Relationsdatabasapp\\Bokhandlarn\\Bokhandlarn\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Bokhandlarn\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\medlu\\source\\repos\\Lab-Assignments-Databases\\Labb 2_Relationsdatabasapp\\Bokhandlarn\\Bokhandlarn\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Bokhandlarn\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-08T08:17:59.22Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
