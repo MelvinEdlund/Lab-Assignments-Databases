@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bokhandlarn")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a20d2bc7c6aa08b9c50e3347f46c4189e171931e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3961636c119957506ee3427d1f7f8ee399548356")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bokhandlarn")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bokhandlarn")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
