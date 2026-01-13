@@ -5,7 +5,7 @@ Detta repo innehåller mina labbar i kursen **Utveckling mot databas och databas
 # [Labb 1 – Relationsdatabas för Bokhandel](https://github.com/MelvinEdlund/Lab-Assignments-Databases/tree/main/Labb1_Relationsdatabas)
 
 
-Detta repo innehåller lösningen för Labb 1 i kursen Utveckling mot databas och databasadministration. Projektet går ut på att designa och implementera en databas för en bokhandel med flera butiker.
+Lösningen för Labb 1 i kursen Utveckling mot databas och databasadministration. Projektet går ut på att designa och implementera en databas för en bokhandel med flera butiker.
 
 # [Labb 2 – Relationsdatabas applikation för musikbibliotek](https://github.com/MelvinEdlund/Lab-Assignments-Databases/tree/main/Labb2_Relationsdatabasapp)
 
