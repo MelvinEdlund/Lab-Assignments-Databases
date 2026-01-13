@@ -1,0 +1,72 @@
+﻿<Window x:Class="MusicLibrary.AddItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicLibrary"
+        mc:Ignorable="d"
+        Title="Add Item" Height="350" Width="277" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Label 
+            Content="Add Item to table:" 
+            VerticalAlignment="Top" 
+            FontWeight="Bold"
+        />
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <Label 
+                Content="Artist name:"
+            />
+            <TextBox 
+                x:Name="ArtistTextBox"
+                Margin="5, 0, 5, 5"
+            />
+            <Label 
+                x:Name="AlbumLabel"
+                Content="Album:"
+            />
+            <TextBox 
+                x:Name="AlbumTextBox"
+                Margin="5, 0, 5, 5"
+            />
+            <Label 
+                x:Name="TrackLabel"
+                Content="Track name:"
+            />
+            <TextBox 
+                x:Name="TrackTextBox"
+                Margin="5, 0, 5, 5"
+            />
+            <Label 
+                x:Name="LengthLabel"
+                Content="Length:"
+            />
+            <TextBox 
+                x:Name="LengthTextBox"
+                Margin="5, 0, 5, 10"
+            />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Button
+                x:Name="ConfirmButton"
+                Content="Add Item"
+                FontWeight="SemiBold"
+                Margin="5, 5"
+                Width="120"
+                Click="AddItem_Click" />
+
+            <Button
+                Content="Cancel"
+                FontWeight="SemiBold"
+                Margin="5, 5"
+                Width="120"
+                Click="Cancel_Click" />
+        </StackPanel>
+    </Grid>
+</Window>
