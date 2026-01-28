@@ -1,0 +1,116 @@
+[
+  {
+    "Id": "00000000-0000-0000-0000-000000000001",
+    "Name": "Default Question Pack",
+    "Difficulty": 1,
+    "TimePerQuestionSeconds": 20,
+    "Questions": [
+      {
+        "Text": "Vad returnerar följande uttryck?\n\"Hello\".Length",
+        "Options": [
+          {
+            "Text": "5",
+            "IsCorrect": true
+          },
+          {
+            "Text": "\"5\"",
+            "IsCorrect": false
+          },
+          {
+            "Text": "4",
+            "IsCorrect": false
+          },
+          {
+            "Text": "HelloLength",
+            "IsCorrect": false
+          }
+        ]
+      },
+      {
+        "Text": "Vad gör följande kodrad?\nvar list = new List<int>() { 1, 2, 3 };",
+        "Options": [
+          {
+            "Text": "Skapar en lista med tre heltal",
+            "IsCorrect": true
+          },
+          {
+            "Text": "Skapar en fast array med tre element",
+            "IsCorrect": false
+          },
+          {
+            "Text": "Skapar en tom lista som fylls senare",
+            "IsCorrect": false
+          },
+          {
+            "Text": "Skapar en dictionary med tre nycklar",
+            "IsCorrect": false
+          }
+        ]
+      },
+      {
+        "Text": "Vad betyder == när man jämför två heltal i C#?",
+        "Options": [
+          {
+            "Text": "Jämför om värdena är lika",
+            "IsCorrect": true
+          },
+          {
+            "Text": "Tilldelning",
+            "IsCorrect": false
+          },
+          {
+            "Text": "Jämför om datatyperna är lika",
+            "IsCorrect": false
+          },
+          {
+            "Text": "Jämför om variabler pekar på samma adress",
+            "IsCorrect": false
+          }
+        ]
+      },
+      {
+        "Text": "Vilket nyckelord används för att skapa en klass i C#?",
+        "Options": [
+          {
+            "Text": "class",
+            "IsCorrect": true
+          },
+          {
+            "Text": "struct",
+            "IsCorrect": false
+          },
+          {
+            "Text": "object",
+            "IsCorrect": false
+          },
+          {
+            "Text": "type",
+            "IsCorrect": false
+          }
+        ]
+      },
+      {
+        "Text": "Vad gör följande kod?\nConsole.WriteLine(3 == 3 && 2 > 1);",
+        "Options": [
+          {
+            "Text": "Skriver ut \"true\"",
+            "IsCorrect": true
+          },
+          {
+            "Text": "Skriver ut \"false\"",
+            "IsCorrect": false
+          },
+          {
+            "Text": "Skriver ut 1",
+            "IsCorrect": false
+          },
+          {
+            "Text": "Ger kompileringsfel",
+            "IsCorrect": false
+          }
+        ]
+      }
+    ]
+  }
+]
+

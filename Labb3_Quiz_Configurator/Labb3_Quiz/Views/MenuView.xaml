@@ -1,0 +1,120 @@
+﻿<UserControl x:Class="Labb3_Quiz_MongoDB.Views.MenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:converter="clr-namespace:Labb3_Quiz_MongoDB.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converter:BoolInverterConverter x:Key="BoolInverterConverter"/>
+    </UserControl.Resources>
+    <Menu>
+        <MenuItem Header="_File">
+            <MenuItem 
+                Header="_New Question Pack" 
+                Icon="{fa:Icon FolderPlus}"
+                InputGestureText="Ctrl+N"
+                Command="{Binding CreateNewPackCommand}"
+                IsEnabled="{Binding IsPlayMode, Converter={StaticResource BoolInverterConverter}}"/>
+            
+            <MenuItem 
+                Header="_Select Question Pack"
+                Icon="{fa:Icon FolderOpen}"
+                IsEnabled="{Binding IsPlayMode, Converter={StaticResource BoolInverterConverter}}">
+                <MenuItem.ItemsSource>
+                    <Binding Path="Packs"/>
+                </MenuItem.ItemsSource>
+                <MenuItem.ItemContainerStyle>
+                    <Style TargetType="MenuItem">
+                        <Setter Property="Command" Value="{Binding DataContext.SetActivePackCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
+                        <Setter Property="CommandParameter" Value="{Binding}" />
+                    </Style>
+                </MenuItem.ItemContainerStyle>
+                <MenuItem.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock>
+                            <Run Text="{Binding Name}"/>
+                            <Run Text=" (" FontSize="11" Foreground="Gray"/>
+                            <Run Text="{Binding Difficulty}" FontSize="11" Foreground="Gray"/>
+                            <Run Text=")" FontSize="11" Foreground="Gray"/>
+                        </TextBlock>
+                    </DataTemplate>
+                </MenuItem.ItemTemplate>
+            </MenuItem>
+            
+            <MenuItem 
+                Header="_Delete Question Pack"
+                InputGestureText="Ctrl+Del"
+                Icon="{fa:Icon FolderMinus}"
+                Command="{Binding RemoveQuestionPackCommand}"
+                IsEnabled="{Binding IsPlayMode, Converter={StaticResource BoolInverterConverter}}"/>
+            <Separator />
+            <MenuItem 
+                Header="Import _Questions..."
+                InputGestureText="Ctrl+I"
+                Icon="{fa:Icon Download}"
+                Command="{Binding ImportQuestionsCommand}"
+                IsEnabled="{Binding IsPlayMode, Converter={StaticResource BoolInverterConverter}}"/>
+            <Separator />
+            <MenuItem 
+                Header="_Save"
+                InputGestureText="Ctrl+S"
+                Icon="{fa:Icon FloppyDisk}"
+                Command="{Binding SaveAllCommand}"/>
+            <Separator />
+            <MenuItem 
+                Header="E_xit"
+                InputGestureText="Alt+F4"
+                Icon="{fa:Icon DoorOpen}" 
+                Command="{Binding ExitProgramCommand}"/>
+        </MenuItem>
+
+        <MenuItem Header="_Edit">
+            <MenuItem 
+                Header="Add Question"
+                InputGestureText="Ctrl+Q"
+                Icon="{fa:Icon Plus}"
+                Command="{Binding ConfigurationViewModel.AddQuestionCommand}"
+                IsEnabled="{Binding IsPlayMode, Converter={StaticResource BoolInverterConverter}}"/>
+            <MenuItem 
+                Header="Remove Question"
+                InputGestureText="Ctrl+Shift+Q"
+                Icon="{fa:Icon Minus}"
+                Command="{Binding ConfigurationViewModel.RemoveQuestionCommand}"
+                IsEnabled="{Binding IsPlayMode, Converter={StaticResource BoolInverterConverter}}"/>
+            <MenuItem 
+                Header="Pack _Options" 
+                InputGestureText="Alt+E, O"
+                Icon="{fa:Icon Sliders}"
+                Command="{Binding ConfigurationViewModel.OpenPackOptionsCommand}"
+                IsEnabled="{Binding IsPlayMode, Converter={StaticResource BoolInverterConverter}}"/>
+            <Separator/>
+            <MenuItem
+                Header="Manage _Categories..."
+                Icon="{fa:Icon Tags}"
+                Command="{Binding ManageCategoriesCommand}"
+                IsEnabled="{Binding IsPlayMode, Converter={StaticResource BoolInverterConverter}}"/>
+        </MenuItem>
+
+        <MenuItem Header="_View">
+            <MenuItem
+                Header="_Play"
+                InputGestureText="Ctrl+P"
+                Icon="{fa:Icon Play}"
+                Command="{Binding ShowPlayerCommand}"/>
+            <MenuItem
+                Header="E_dit"
+                InputGestureText="Ctrl+E"
+                Icon="{fa:Icon Gears}"
+                Command="{Binding ShowConfigCommand}"/>
+            <Separator/>
+            <MenuItem
+                Header="F_ull Screen"
+                InputGestureText="F11"
+                Icon="{fa:Icon Expand}"
+                Command="{Binding ToggleFullScreenCommand}"/>
+        </MenuItem>
+    </Menu>
+</UserControl>

@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="Labb3_Quiz_MongoDB.Views.PlayerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Labb3_Quiz_MongoDB.Views"
+             xmlns:models="clr-namespace:Labb3_Quiz_MongoDB.Models"
+             xmlns:converter="clr-namespace:Labb3_Quiz_MongoDB.Converters"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:components="clr-namespace:Labb3_Quiz_MongoDB.Views.Components"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <converter:BoolInverterConverter x:Key="InverseBoolConverter"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Main quiz medans spelet kör -->
+        <Grid Grid.Row="0" Visibility="{Binding IsRoundActive, Converter={StaticResource BoolToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+           
+            <Grid Grid.Row="0" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Question text -->
+                <TextBlock 
+                    Grid.Row="0"
+                    Text="{Binding CurrentQuestion.Text}"
+                    FontSize="20"
+                    FontWeight="Normal"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="40,0,40,20"/>
+
+                <!-- Question räknare -->
+                <TextBlock 
+                    Grid.Row="1"
+                    FontSize="14"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                    <TextBlock.Text>
+                        <MultiBinding StringFormat="Fråga {0} av {1}">
+                            <Binding Path="CurrentQuestionNumber"/>
+                            <Binding Path="TotalQuestions"/>
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            </Grid>
+
+            <!-- svarsalternativ -->
+            <Grid Grid.Row="1" Margin="40,40,40,40">
+                <ItemsControl ItemsSource="{Binding ShuffledOptions}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Rows="2" Columns="2"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type models:AnswerOption}">
+                            <Button
+                                Content="{Binding Text}"
+                                FontSize="14"
+                                FontWeight="Normal"
+                                Padding="25"
+                                Margin="15"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="#F0F0F0"
+                                BorderBrush="#CCCCCC"
+                                BorderThickness="1"
+                                Command="{Binding DataContext.SubmitAnswerCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                CommandParameter="{Binding}"
+                                IsEnabled="{Binding DataContext.HasAnswered, RelativeSource={RelativeSource AncestorType=UserControl}, Converter={StaticResource InverseBoolConverter}}">
+                                
+                            </Button>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+
+            <!-- feedback (automatisk övergång till nästa fråga efter 2 sekunder) -->
+            <Grid Grid.Row="0" Grid.RowSpan="2" 
+                  Visibility="{Binding HasAnswered, Converter={StaticResource BoolToVisibilityConverter}}"
+                  Background="#E0FFFFFF" 
+                  VerticalAlignment="Stretch"
+                  HorizontalAlignment="Stretch">
+                <StackPanel 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+                    <TextBlock 
+                        Text="{Binding UserAnswerText}"
+                        FontSize="18"
+                        FontWeight="Bold"
+                        HorizontalAlignment="Center"
+                        Margin="0,0,0,15">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Foreground" Value="Red"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding UserAnswerText}" Value="Correct!">
+                                        <Setter Property="Foreground" Value="Green"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <TextBlock 
+                        Text="{Binding CorrectAnswerText}"
+                        FontSize="14"
+                        HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Timer -->
+            <TextBlock 
+                Grid.Row="0" Grid.RowSpan="2"
+                Text="{Binding RemainingTime}"
+                FontSize="36"
+                FontWeight="Bold"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Margin="20,20,20,0"
+                Foreground="Black"/>
+        </Grid>
+
+        <!-- Resultat (när quizet är klart) -->
+        <components:ResultView Grid.Row="0" 
+                               Visibility="{Binding ShowResults, Converter={StaticResource BoolToVisibilityConverter}}"/>
+    </Grid>
+</UserControl>
